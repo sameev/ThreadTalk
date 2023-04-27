@@ -11,6 +11,7 @@ const NavBar = () => {
             id='logo'
             className='nav-logo'
             icon={faHouse}
+            size='2x'
           />
         </Link>
 
