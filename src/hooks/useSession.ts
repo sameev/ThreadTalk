@@ -18,7 +18,7 @@ export function useSession(): SupashipUserInfo {
     session: null,
   });
   const [channel, setChannel] = useState<RealtimeChannel | null>(null);
-  
+
   useEffect(() => {
     supaClient.auth.getSession().then(({ data: { session } }) => {
       setUserInfo({ ...userInfo, session });
