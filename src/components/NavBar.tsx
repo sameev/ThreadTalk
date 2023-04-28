@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
 import { UserContext } from './Layout';
+import UserMenu from './UserMenu';
+import Login from './Login';
 
 const NavBar = () => {
   const { session } = useContext(UserContext);
@@ -26,7 +28,7 @@ const NavBar = () => {
             </Link>
           </li>
           <li className='nav-auth-item'>
-            {session?.user ? 'user is logged in' : 'user is logged out'}
+            {session?.user ? <UserMenu /> : <Login />}
           </li>
         </ul>
       </nav>
