@@ -3,7 +3,7 @@ import Layout from './Layout';
 import MessageBoard from './MessageBoard';
 import AllPosts from './AllPosts';
 import PostView from './PostView';
-import Welcome from './Welcome';
+import { Welcome, welcomeLoader } from './Welcome';
 
 const router = createBrowserRouter([
   {
@@ -25,17 +25,16 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: "welcome",
-        element: <Welcome />
-      }
+        path: 'welcome',
+        element: <Welcome />,
+        loader: welcomeLoader,
+      },
     ],
   },
 ]);
 
 function App() {
-  return (
-    <RouterProvider router={router} />
-  )
+  return <RouterProvider router={router} />;
 }
 
 export default App;
