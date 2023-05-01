@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { UserContext } from './Layout';
-// import { castVote } from "./cast-vote";
-import { CreatePost } from "./CreatePost";
+import { CreatePost } from './CreatePost';
 import { GetPostsResponse } from '../types/database.types';
-import { supaClient } from '../supa-client';
-// import { timeAgo } from "./time-ago";
-// import { UpVote } from "./UpVote";
-// import { usePostScore } from "./use-post-score";
+import { supaClient } from '../utils/supaClient';
+import { timeAgo } from '../utils/timeAgo';
+import { UpVote } from './Upvote';
+import { usePostScore } from '../hooks/usePostScore';
+import { castVote } from '../utils/castVote';
 
 export function AllPosts() {
   const { session } = useContext(UserContext);
@@ -54,7 +54,7 @@ export function AllPosts() {
         />
       )}
       <div className='posts-container'>
-        {posts?.map((post, i) => (
+        {posts?.map((post) => (
           <Post
             key={post.id}
             postData={post}
