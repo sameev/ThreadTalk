@@ -1,6 +1,6 @@
 import { RealtimeChannel, Session } from '@supabase/supabase-js';
 import { useEffect, useState } from 'react';
-import { supaClient } from '../supa-client'; 
+import { supaClient } from '../utils/supaClient';
 import { useNavigate } from 'react-router-dom';
 
 export interface UserProfile {
@@ -14,7 +14,7 @@ export interface SupashipUserInfo {
 }
 
 export const setReturnPath = () => {
-  localStorage.setItem("returnPath", window.location.pathname);
+  localStorage.setItem('returnPath', window.location.pathname);
 };
 
 export function useSession(): SupashipUserInfo {

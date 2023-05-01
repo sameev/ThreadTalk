@@ -1,7 +1,7 @@
 import { Session } from '@supabase/supabase-js';
 import { useContext, useRef, useState } from 'react';
 import { UserContext } from './Layout';
-import { supaClient } from '../supa-client';
+import { supaClient } from '../utils/supaClient';
 
 export interface CreatePostProps {
   newPostCreated?: () => void;

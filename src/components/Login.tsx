@@ -1,7 +1,7 @@
 import { Auth } from '@supabase/auth-ui-react';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
 import { useState } from 'react';
-import { supaClient } from '../supa-client';
+import { supaClient } from '../utils/supaClient';
 import Dialog from './Dialog';
 
 const Login = () => {
