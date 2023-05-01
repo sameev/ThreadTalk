@@ -165,7 +165,7 @@ export interface Database {
       };
       create_new_comment: {
         Args: {
-          user_id: string;
+          user_id: string | undefined;
           content: string;
           path: string;
         };
