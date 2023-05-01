@@ -2,8 +2,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './Layout';
 import MessageBoard from './MessageBoard';
 import { AllPosts } from './AllPosts';
-import PostView from './PostView';
-import { Welcome, welcomeLoader } from './Welcome';
+import { PostView } from './Post';
+import { Welcome } from './Welcome';
+import { welcomeLoader } from '../utils/welcomeLoader';
 
 const router = createBrowserRouter([
   {
