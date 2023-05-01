@@ -161,8 +161,10 @@ export function PostView({ postId }: { postId?: string | undefined }) {
             className='font-sans bg-gray-600 rounded p-4 m-4'
             data-e2e='post-content'
           >
-            {postDetailData.post?.content.split('\n').map((paragraph) => (
-              <p className='font-sans p-2'>{paragraph}</p>
+            {postDetailData.post?.content.split('\n').map((paragraph, idx) => (
+              <p key={idx} className='font-sans p-2'>
+                {paragraph}
+              </p>
             ))}
           </div>
           {userContext.session && postDetailData.post && (
@@ -259,8 +261,10 @@ function CommentView({
               className='bg-gray-600 rounded p-4 m-4'
               data-e2e='comment-content'
             >
-              {comment.content.split('\n').map((paragraph) => (
-                <p className='font-sans p-2'>{paragraph}</p>
+              {comment.content.split('\n').map((paragraph, idx) => (
+                <p key={idx} className='font-sans p-2'>
+                  {paragraph}
+                </p>
               ))}
             </div>
             {commenting && (
