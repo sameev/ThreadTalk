@@ -34,6 +34,7 @@ const Login = () => {
             {
               <Auth
                 supabaseClient={supaClient}
+                providers={['google']}
                 view={authMode}
                 appearance={{
                   theme: ThemeSupa,
