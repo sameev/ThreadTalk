@@ -97,7 +97,7 @@ export interface Database {
           id: string;
           post_id: string;
           user_id: string;
-          vote_type: string;
+          vote_type: "up" | "down" | undefined;
         };
         Insert: {
           id?: string;
@@ -128,7 +128,7 @@ export interface Database {
         Update: {
           created_at?: string;
           id?: string;
-          path?: string;
+          path?: unknown;
           user_id?: string;
         };
       };

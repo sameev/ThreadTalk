@@ -15,7 +15,6 @@ export interface Post {
   score: number;
   created_at: string;
   path: string;
-  comments: Comment[];
 }
 
 export interface Comment {
@@ -89,7 +88,8 @@ export function PostView({ postId }: { postId?: string | undefined }) {
       userContext,
     }).then((newPostDetailData) => {
       if (newPostDetailData) {
-        setPostDetailData(newPostDetailData);
+        //TODO: debug TS error on newPostDetailData parameter below:
+        setPostDetailData(newPostDetailData as any);
       }
     });
   }, [userContext, params, bumper]);
@@ -352,7 +352,7 @@ function CreateComment({
                 textareaRef.current?.value != null &&
                   (textareaRef.current.value = '');
                 const commentId = data as unknown as string;
-                let intervalId = setInterval(() => {
+                const intervalId = setInterval(() => {
                   const comment = document.querySelector(
                     `div[data-e2e="comment-${commentId}"]`
                   );
@@ -370,7 +370,7 @@ function CreateComment({
           ref={textareaRef}
           name='comment'
           placeholder='Your comment here'
-          className='text-gray-800 p-4 rounded'
+          className='text-gray-800 p-4 rounded textArea-color'
           onChange={({ target: { value } }) => {
             setComment(value);
           }}
