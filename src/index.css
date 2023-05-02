@@ -2135,6 +2135,10 @@ svg {
   opacity: 1 !important;
 }
 
+.textArea-color {
+  color: rgb(31 41 55 / var(--tw-text-opacity))
+}
+
 @media (min-width: 768px){
   .md\:mx-4{
     margin-left: 1rem !important;
