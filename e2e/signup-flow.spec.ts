@@ -160,6 +160,6 @@ test.describe("User auth", () => {
       hasText: "Welcome to Samee's Project Message Board!",
     });
     await expect(welcomeHeader).toHaveCount(1);
-    await expect(validation).toHaveText(`Username "testuser" is already taken`);
+    await expect(validation).toHaveText(`Username "testuser6" is already taken`);
   });
 });
