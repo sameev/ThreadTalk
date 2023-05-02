@@ -279,12 +279,14 @@ function CommentView({
             )}
             {!commenting && (
               <div className='ml-4'>
-                <button
-                  onClick={() => setCommenting(!commenting)}
-                  disabled={!session}
-                >
-                  {commenting ? 'Cancel' : 'Reply'}
-                </button>
+                {session ? (
+                  <button
+                    onClick={() => setCommenting(!commenting)}
+                    disabled={!session}
+                  >
+                    {commenting ? 'Cancel' : 'Reply'}
+                  </button>
+                ) : null}
               </div>
             )}
             {/* <p>{comment.id}</p> */}
